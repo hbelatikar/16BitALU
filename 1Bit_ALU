@@ -33,7 +33,7 @@ module one_bit(
 
     dpgGate     dpg1(a,b,select[1],select[0],garbage[0],garbage[1],wdpg[1],wdpg[0]);
     
-    fredGate    mux1(select[1],wdpg[2],b,garbage[2],wmux[0],garbage[3]),
+    fredGate    mux1(select[1],a,b,garbage[2],wmux[0],garbage[3]),
                 mux2(select[0],wmux[0],wdpg[1],garbage[4],wmux[1],garbage[5]),
                 mux3(select[2],wmux[1],wdpg[1],garbage[6],wmux[2],garbage[7]), //to arith mux port 1
                 mux4(select[0],~a,1'b1,garbage[8],wmux[3],garbage[9]),
