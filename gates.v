@@ -30,7 +30,7 @@ module fredGate (a,b,c,p,q,r);
 	input a,b,c;
 	output p,q,r;
 	assign p=a;
-	assign q=((~a)&b)^(a&b);
+	assign q=((~a)&b)^(a&c);
 	assign r=((~a)&c)^(a&b);
 endmodule
 
