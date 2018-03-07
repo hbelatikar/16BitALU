@@ -42,29 +42,13 @@ module tofGate (a,b,c,p,q,r);
 	assign r=(a&b)^c;
 endmodule
 
-/*module hngGate(a,b,c,d,p,q,r,s);
-	input a,b,c,d;
-	output p,q,r,s;	
-	assign p=a;
-	assign q=b;
-	assign r= a^b^c;
-	assign s= ((a^b)&c)^(a&b)^d;
-endmodule*/
-
-module perGate (a,b,c,p,q,r);
-	input a,b,c;
-	output p,q,r;	
-	assign p=a;
-	assign q=b^a;
-	assign r=(a&b)^c;
-endmodule
-
 module dpgGate(a,b,c,d,p,q,r,s);
 	input a,b,c,d;
 	output p,q,r,s;	
-	wire wp,wq,wr;
-	perGate pg1(a,b,c,p,wq,wr);
-	perGate pg2(wq,d,wr,q,r,s);
+	assign p=a;
+	assign q=(a^b);
+	assign r=(a^b^c);
+	assign s=(((a^b)&c)^((a&b)^d));
 endmodule
 
 module dkgGate(a,b,c,d,p,q,r,s);
