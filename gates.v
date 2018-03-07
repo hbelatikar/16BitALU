@@ -54,8 +54,8 @@ endmodule
 module dkgGate(a,b,c,d,p,q,r,s);
 	input a,b,c,d;
 	output p,q,r,s;	
-	assign p=b;
-	assign q=((~a)&c)||(a&(~d));
-	assign r=((a^b)||(c^d)||(c&d));
+	assign p=a;
+	assign q=((~a)&c)^(a&(~d));
+	assign r=((a^b)&(c^d)^(c&d));
 	assign s=b^c^d;
 endmodule
